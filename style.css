@@ -1,0 +1,1379 @@
+/* ===================================================================
+   SECUNDARIA PÚBLICA DE JUCHITÁN DE ZARAGOZA
+   Hoja de Estilos Personalizada, Diferenciada y Responsiva (Mobile-First)
+   =================================================================== */
+
+/* --- 1. Variables CSS (Paleta Cálida, Tradicional y Académica) --- */
+:root {
+  /* Tonos Principales (Tierra de Juchitán, Arcilla y Cadenilla Dorada) */
+  --color-primary: #B84A28;           /* Terracota Oaxaqueño profundo */
+  --color-primary-dark: #923417;     /* Terracota oscuro para contrastes */
+  --color-primary-light: #FDF3EE;    /* Tinte terracota suave */
+  
+  --color-accent: #D97706;            /* Ámbar / Oro Cempasúchil */
+  --color-accent-gold: #B45309;       /* Oro envejecido institucional */
+  --color-accent-light: #FEF3C7;      /* Crema dorada suave */
+  
+  --color-academic: #1E3A8A;          /* Azul académico institucional para acentos */
+  --color-academic-light: #EFF6FF;
+
+  --color-whatsapp: #25D366;          /* Verde oficial WhatsApp */
+  --color-whatsapp-hover: #1EBE5D;
+
+  /* Neutros Cálidos y Fondos */
+  --bg-main: #FFFDF9;                 /* Crema cálido de fondo general */
+  --bg-surface: #FFFFFF;              /* Blanco puro para tarjetas */
+  --bg-subtle: #F9F5EF;               /* Fondo apergaminado suave */
+  --bg-alt: #F3ECE1;                  /* Tono arena suave para contraste */
+  
+  /* Bordes y Sombras Únicas (Diferenciadas, no genéricas) */
+  --border-warm: rgba(216, 198, 180, 0.7);
+  --border-warm-hover: rgba(184, 74, 40, 0.45);
+  
+  --shadow-card: 0 10px 28px -6px rgba(34, 28, 24, 0.07), 0 4px 10px rgba(34, 28, 24, 0.03);
+  --shadow-card-elevated: 0 18px 40px -8px rgba(184, 74, 40, 0.16), 0 8px 18px rgba(34, 28, 24, 0.06);
+  --shadow-postit: 0 10px 22px rgba(45, 30, 20, 0.12), 0 2px 6px rgba(45, 30, 20, 0.08);
+
+  /* Textos */
+  --text-primary: #211B17;            /* Carbón cálido profundo */
+  --text-secondary: #574B42;          /* Texto de lectura cálido */
+  --text-muted: #84756A;              /* Atenuado */
+  --text-inverse: #FFFFFF;
+
+  /* Fondos Oscuros */
+  --bg-dark: #191411;                 /* Fondo oscuro del footer */
+  --bg-dark-card: #26201B;
+  --border-dark: #382F28;
+
+  /* Tipografías */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Radios de curvatura pronunciados (Diseño diferenciado) */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 26px;                  /* Curvas generosas no genéricas */
+  --radius-xl: 34px;
+  --radius-full: 9999px;
+
+  /* Transiciones */
+  --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.18s ease;
+}
+
+/* --- 2. Reseteo y Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background-color: var(--bg-main);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* --- 3. Contenedores y Estilos Globales --- */
+.container {
+  width: 100%;
+  max-width: 1220px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.section {
+  padding: 5rem 0;
+  position: relative;
+}
+
+.section-relative {
+  position: relative;
+  z-index: 2;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Encabezados de Sección */
+.section-header {
+  margin-bottom: 3.25rem;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  border: 1px solid rgba(184, 74, 40, 0.2);
+  padding: 0.35rem 1rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.85rem;
+}
+
+.section-tag-gold {
+  color: #B45309;
+  background-color: var(--color-accent-light);
+  border-color: rgba(217, 119, 6, 0.25);
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.8vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.section-description {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* Botones Base */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  font-size: 0.975rem;
+  font-weight: 600;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-normal);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.btn-large {
+  padding: 1rem 2.1rem;
+  font-size: 1.05rem;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--text-inverse);
+  box-shadow: 0 4px 16px rgba(184, 74, 40, 0.35);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  box-shadow: 0 8px 24px rgba(184, 74, 40, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: rgba(255, 255, 255, 0.92);
+  color: var(--text-primary);
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  background-color: #FFFFFF;
+  color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-nav {
+  background-color: var(--color-primary);
+  color: var(--text-inverse);
+  padding: 0.55rem 1.25rem;
+  font-size: 0.875rem;
+}
+
+.btn-nav:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* --- 4. Barra de Navegación (Header) --- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(255, 253, 249, 0.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(216, 198, 180, 0.5);
+  transition: all var(--transition-fast);
+}
+
+.site-header.scrolled {
+  background-color: rgba(255, 253, 249, 0.98);
+  box-shadow: 0 4px 20px rgba(34, 28, 24, 0.08);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 74px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--color-primary);
+}
+
+.logo-emblem {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.school-name {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.15;
+}
+
+.school-tagline {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Menú móvil */
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 2.5px;
+  background-color: var(--text-primary);
+  border-radius: 2px;
+  transition: all var(--transition-normal);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
+}
+
+.nav-menu {
+  position: fixed;
+  top: 74px;
+  left: 0;
+  right: 0;
+  background-color: var(--bg-main);
+  border-bottom: 2px solid var(--color-primary);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transform: translateY(-120%);
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--transition-normal);
+}
+
+.nav-menu.active {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.nav-link {
+  font-weight: 600;
+  color: var(--text-primary);
+  padding: 0.4rem 0;
+  display: block;
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+}
+
+/* --- 5. Hero Section (Centrado Radical & Placeholder de Logo) --- */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 115px;
+  padding-bottom: 5rem;
+  background-color: var(--bg-dark);
+  background-image: 
+    linear-gradient(180deg, rgba(25, 20, 17, 0.9) 0%, rgba(184, 74, 40, 0.82) 50%, rgba(25, 20, 17, 0.94) 100%),
+    url('https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center center;
+  color: var(--text-inverse);
+  text-align: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(217, 119, 6, 0.22) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-content-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Espacio (Placeholder) para el Logo de la Escuela (Círculo Centrado) */
+.hero-logo-wrapper {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-logo-placeholder {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  border: 2px dashed rgba(253, 230, 138, 0.8);
+  box-shadow: 0 0 25px rgba(217, 119, 6, 0.35), inset 0 0 15px rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem;
+  color: #FEF3C7;
+  transition: transform var(--transition-normal);
+  cursor: pointer;
+}
+
+.hero-logo-placeholder:hover {
+  transform: scale(1.06);
+  border-style: solid;
+  border-color: #FBBF24;
+}
+
+.logo-inner-ring {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #F59E0B;
+}
+
+.logo-placeholder-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.logo-placeholder-text {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+  color: #FFFFFF;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  padding: 0.45rem 1.2rem;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #FEF3C7;
+  margin-bottom: 1.5rem;
+}
+
+.badge-dot {
+  width: 9px;
+  height: 9px;
+  background-color: #10B981;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #10B981;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.35rem, 5.5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.35rem;
+  color: #FFFFFF;
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
+}
+
+.hero-subtitle {
+  font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+  line-height: 1.65;
+  color: #F3EAE3;
+  margin-bottom: 2.5rem;
+  max-width: 720px;
+}
+
+.hero-actions-centered {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 440px;
+  margin-bottom: 3.5rem;
+}
+
+.hero-stats-centered {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.stat-pill {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.stat-num {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: #FBBF24;
+}
+
+.stat-txt {
+  font-size: 0.85rem;
+  color: #EFE6DE;
+  font-weight: 500;
+}
+
+/* --- 6. Sección "Camino a la Preparatoria" (Educación Académica) --- */
+.academico-section {
+  background-color: var(--bg-subtle);
+  border-bottom: 1px solid var(--border-warm);
+}
+
+.academico-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  margin-bottom: 3rem;
+}
+
+.academic-card {
+  background-color: var(--bg-surface);
+  border: 1.5px solid var(--border-warm);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem 1.85rem;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.academic-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-academic), var(--color-primary));
+  opacity: 0.8;
+}
+
+.academic-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-warm-hover);
+  box-shadow: var(--shadow-card-elevated);
+}
+
+.academic-card-featured {
+  border: 2px solid #F59E0B;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFFDF8 100%);
+}
+
+.card-featured-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  font-size: 0.725rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #B45309;
+  background-color: var(--color-accent-light);
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+.academic-icon-box {
+  width: 54px;
+  height: 54px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-academic-light);
+  color: var(--color-academic);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.academic-icon-box svg {
+  width: 28px;
+  height: 28px;
+}
+
+.academic-title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.academic-text {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.academic-meta {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  align-self: flex-start;
+}
+
+/* Barra de logro académico */
+.academic-achievement-bar {
+  background: linear-gradient(135deg, #1E3A8A 0%, #172554 100%);
+  color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: 0 12px 28px rgba(30, 58, 138, 0.2);
+}
+
+.achievement-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FBBF24;
+  flex-shrink: 0;
+}
+
+.achievement-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #FBBF24;
+  margin-bottom: 0.35rem;
+}
+
+.achievement-text {
+  font-size: 0.95rem;
+  color: #E2E8F0;
+  line-height: 1.6;
+}
+
+/* --- 7. Sección "Nuestras Raíces" (Justificación Histórica) --- */
+.raices-section {
+  background-color: #FAF4EB;
+  border-top: 1px solid var(--border-warm);
+  border-bottom: 1px solid var(--border-warm);
+  position: relative;
+  overflow: hidden;
+}
+
+.raices-card-centered {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+  background: #FFFFFF;
+  border: 2px solid rgba(217, 119, 6, 0.2);
+  border-radius: var(--radius-xl);
+  padding: 3.5rem 2rem;
+  box-shadow: var(--shadow-card-elevated);
+  position: relative;
+}
+
+.raices-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  color: var(--color-accent);
+}
+
+.ornament-line {
+  width: 40px;
+  height: 1px;
+  background-color: var(--color-accent);
+}
+
+.ornament-icon {
+  font-size: 1.1rem;
+}
+
+.raices-headline {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1.75rem;
+}
+
+/* Cita Central Inspiradora Requerida */
+.raices-quote {
+  background: linear-gradient(135deg, #FFF8EE 0%, #FEF3C7 100%);
+  border-left: 5px solid var(--color-accent);
+  border-right: 5px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: 1.75rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(217, 119, 6, 0.12);
+}
+
+.raices-quote-main {
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--color-primary-dark);
+}
+
+.raices-story {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.25rem;
+  text-align: justify;
+  text-align-last: center;
+}
+
+.raices-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
+}
+
+.culture-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #FFFDF9;
+  border: 1px solid var(--border-warm);
+  padding: 0.45rem 1.1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.pill-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+}
+
+/* --- 8. Sección de Talleres con Marca de Agua (Watermark) --- */
+.talleres-section {
+  background-color: var(--bg-main);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de Marca de Agua Sutil */
+.has-watermark .watermark-backdrop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 750px;
+  max-width: 90vw;
+  aspect-ratio: 1;
+  opacity: 0.04;
+  color: var(--color-primary);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.has-watermark .watermark-backdrop svg {
+  width: 100%;
+  height: 100%;
+}
+
+.talleres-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Tarjetas Rediseñadas: Curvatura pronunciada y sombras elegantes */
+.taller-card-elevated {
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-warm);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem 2rem;
+  box-shadow: 0 12px 30px -8px rgba(184, 74, 40, 0.1), 0 4px 10px rgba(34, 28, 24, 0.04);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+  overflow: hidden;
+}
+
+.taller-card-elevated:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-primary);
+  box-shadow: 0 22px 45px -10px rgba(184, 74, 40, 0.22), 0 8px 16px rgba(34, 28, 24, 0.06);
+}
+
+.card-accent-pill {
+  align-self: flex-start;
+  font-size: 0.725rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.25rem;
+}
+
+.card-icon-container {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, #FEE8DE 100%);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 12px rgba(184, 74, 40, 0.15);
+  transition: all var(--transition-normal);
+}
+
+.taller-card-elevated:hover .card-icon-container {
+  background: var(--color-primary);
+  color: #FFFFFF;
+  transform: scale(1.08);
+}
+
+.taller-svg-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.taller-title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.85rem;
+  line-height: 1.3;
+}
+
+.taller-text {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.taller-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  border-top: 1px dashed var(--border-warm);
+  padding-top: 1.15rem;
+}
+
+.highlight-chip {
+  font-size: 0.785rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background-color: var(--bg-subtle);
+  border: 1px solid rgba(216, 198, 180, 0.6);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+/* --- 9. Tablero de Avisos (Estilo Post-it / Boletín Oficial) --- */
+.avisos-section {
+  background-color: var(--bg-alt);
+  border-top: 1px solid var(--border-warm);
+}
+
+.avisos-board-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.25rem;
+}
+
+/* Tarjeta estilo Post-it escolar */
+.postit-card {
+  position: relative;
+  padding: 2.25rem 1.75rem 1.75rem;
+  border-radius: 6px;
+  box-shadow: var(--shadow-postit);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+}
+
+/* Chincheta / Push-pin superior */
+.postit-pin {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #F87171, #DC2626 70%, #991B1B);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25), inset 0 1px 2px rgba(255, 255, 255, 0.5);
+  z-index: 5;
+}
+
+.postit-pin::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 7px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Colores de Post-it */
+.postit-yellow {
+  background-color: #FEF9C3;
+  border-left: 6px solid #EAB308;
+}
+
+.postit-coral {
+  background-color: #FFE4D6;
+  border-left: 6px solid #F97316;
+}
+
+.postit-amber {
+  background-color: #FEF08A;
+  border-left: 6px solid #CA8A04;
+}
+
+.postit-card:hover {
+  transform: translateY(-8px) rotate(0deg) scale(1.02);
+  box-shadow: 0 20px 35px rgba(34, 28, 24, 0.16);
+  z-index: 10;
+}
+
+.postit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.postit-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: rgba(0, 0, 0, 0.08);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+}
+
+.postit-date {
+  font-size: 0.775rem;
+  font-weight: 700;
+  color: #B45309;
+}
+
+.postit-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.85rem;
+  line-height: 1.3;
+}
+
+.postit-body {
+  font-size: 0.95rem;
+  color: #4A3E36;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.postit-footer {
+  border-top: 1px dashed rgba(0, 0, 0, 0.15);
+  padding-top: 0.85rem;
+}
+
+.postit-seal {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #15803D;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* --- 10. Footer y Contacto Centrado (Sin Redes Sociales) --- */
+.site-footer {
+  background-color: var(--bg-dark);
+  color: #E6DCD3;
+  padding-top: 5rem;
+  border-top: 4px solid var(--color-primary);
+  text-align: center;
+}
+
+.footer-centered-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+}
+
+.footer-brand-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.footer-crest-emblem {
+  width: 52px;
+  height: 52px;
+  margin-bottom: 1rem;
+}
+
+.footer-school-title {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0.35rem;
+}
+
+.footer-school-sub {
+  font-size: 0.95rem;
+  color: #F59E0B;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Bloque oficial de contacto centrado */
+.official-contact-box-centered {
+  background-color: var(--bg-dark-card);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem 1.75rem;
+  width: 100%;
+  margin-bottom: 3.5rem;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.contact-data-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 580px;
+}
+
+.contact-data-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(184, 74, 40, 0.15);
+  color: #F87171;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-data-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.contact-data-text strong {
+  font-family: var(--font-heading);
+  color: #FBBF24;
+  font-size: 1.05rem;
+}
+
+.contact-data-text span {
+  color: #D6C8BD;
+  font-size: 1rem;
+}
+
+/* Botón Grande de WhatsApp */
+.footer-whatsapp-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.btn-whatsapp-large {
+  background: linear-gradient(135deg, var(--color-whatsapp) 0%, #15803D 100%);
+  color: #FFFFFF;
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 1.15rem 2.25rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  width: 100%;
+  max-width: 380px;
+  justify-content: center;
+}
+
+.btn-whatsapp-large:hover {
+  background: linear-gradient(135deg, var(--color-whatsapp-hover) 0%, #166534 100%);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.55);
+  color: #FFFFFF;
+}
+
+.whatsapp-svg {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.whatsapp-helper-text {
+  font-size: 0.85rem;
+  color: #A89B90;
+}
+
+/* Contenedor del Mapa Centrado */
+.footer-map-section-centered {
+  width: 100%;
+  margin-bottom: 4rem;
+}
+
+.map-title-centered {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  color: #FFFFFF;
+  margin-bottom: 1.5rem;
+}
+
+.map-frame-wrapper {
+  width: 100%;
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 3px solid var(--border-dark);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  aspect-ratio: 16 / 9;
+}
+
+.map-frame-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0;
+}
+
+/* Barra legal */
+.footer-legal-bar {
+  background-color: #110D0B;
+  border-top: 1px solid var(--border-dark);
+  padding: 1.75rem 0;
+  font-size: 0.875rem;
+  color: #94867C;
+  width: 100%;
+}
+
+.footer-legal-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  text-align: center;
+}
+
+.zapotec-honor {
+  color: #F59E0B;
+  font-weight: 600;
+}
+
+/* --- 11. Media Queries (Mobile-First Breakpoints) --- */
+
+/* Tablet (>= 640px) */
+@media (min-width: 640px) {
+  .hero-actions-centered {
+    flex-direction: row;
+    max-width: 520px;
+  }
+
+  .academico-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .talleres-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .avisos-board-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .postit-card:nth-child(1) {
+    transform: rotate(-1.5deg);
+  }
+
+  .postit-card:nth-child(2) {
+    transform: rotate(1.5deg);
+  }
+
+  .academic-achievement-bar {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* Escritorio Estándar (>= 768px) */
+@media (min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-menu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+    background: transparent;
+    border-bottom: none;
+    box-shadow: none;
+    padding: 0;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.75rem;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    gap: 1.4rem;
+  }
+
+  .nav-link {
+    font-size: 0.95rem;
+    padding: 0.25rem 0;
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: width var(--transition-fast);
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .contact-data-item {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .contact-data-text {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+/* Escritorio Grande (>= 1024px) */
+@media (min-width: 1024px) {
+  .section {
+    padding: 6.5rem 0;
+  }
+
+  .talleres-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Las tarjetas 4 y 5 se organizan armónicamente */
+  .talleres-grid .taller-card-elevated:nth-child(4) {
+    grid-column: span 1;
+  }
+
+  .talleres-grid .taller-card-elevated:nth-child(5) {
+    grid-column: span 1;
+  }
+
+  .avisos-board-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .postit-card:nth-child(1) {
+    transform: rotate(-2deg);
+  }
+
+  .postit-card:nth-child(2) {
+    transform: rotate(1deg);
+  }
+
+  .postit-card:nth-child(3) {
+    transform: rotate(-1.5deg);
+  }
+
+  .footer-legal-flex {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* Accesibilidad: Reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transform: none !important;
+  }
+}
