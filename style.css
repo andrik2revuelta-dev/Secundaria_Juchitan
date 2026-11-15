@@ -1931,6 +1931,100 @@ address {
   font-weight: 600;
 }
 
+/* --- 11.5. Botón Flotante de WhatsApp (Llamado a la Acción Fijo) --- */
+.whatsapp-float-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 62px;
+  height: 62px;
+  background-color: #25D366;
+  color: #FFFFFF;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45), 0 3px 10px rgba(0, 0, 0, 0.18);
+  z-index: 1000;
+  text-decoration: none;
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s ease, background-color 0.2s ease;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  animation: whatsappPulse 2.8s infinite;
+}
+
+.whatsapp-float-btn:hover {
+  background-color: #20BA56;
+  color: #FFFFFF;
+  transform: scale(1.1) translateY(-3px);
+  box-shadow: 0 8px 26px rgba(37, 211, 102, 0.65), 0 4px 14px rgba(0, 0, 0, 0.22);
+  animation: none;
+}
+
+.whatsapp-float-btn:active {
+  transform: scale(0.95) translateY(0);
+}
+
+.whatsapp-float-icon {
+  width: 35px;
+  height: 35px;
+  fill: currentColor;
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-float-btn:hover .whatsapp-float-icon {
+  transform: rotate(-6deg);
+}
+
+/* Tooltip informativo al pasar el cursor (Escritorio) */
+.whatsapp-float-tooltip {
+  position: absolute;
+  right: 74px;
+  background-color: #191411;
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 0.825rem;
+  font-weight: 700;
+  padding: 0.5rem 0.95rem;
+  border-radius: var(--radius-md);
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.whatsapp-float-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -6px;
+  transform: translateY(-50%);
+  border-width: 6px 0 6px 6px;
+  border-style: solid;
+  border-color: transparent transparent transparent #191411;
+}
+
+.whatsapp-float-btn:hover .whatsapp-float-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Animación sutil de pulso */
+@keyframes whatsappPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.65);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
 /* --- 12. Media Queries (Mobile-First y Adaptabilidad) --- */
 
 /* ===================================================================
@@ -2379,6 +2473,23 @@ address {
 
   .map-frame-wrapper {
     aspect-ratio: 4 / 3 !important;
+  }
+
+  /* Botón WhatsApp Flotante en Móviles */
+  .whatsapp-float-btn {
+    bottom: 18px !important;
+    right: 18px !important;
+    width: 56px !important;
+    height: 56px !important;
+  }
+
+  .whatsapp-float-icon {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .whatsapp-float-tooltip {
+    display: none !important;
   }
 }
 
