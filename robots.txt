@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://andrik2revuelta-dev.github.io/Secundaria_Juchitan/sitemap.xml

@@ -19,7 +19,7 @@
   <meta name="keywords" content="Secundaria General José Gregorio Meléndez, secundaria local, Juchitán de Zaragoza, talleres técnicos, aprender oficios, inscripciones, sin examen de admisión, serigrafía, bordado tradicional, hamacas, música, estilismo y corte, Clave 20DES0242A, Zona Escolar 011, Turno Matutino, secundaria en la tercera sección">
   <meta name="author" content="Secundaria General José Gregorio Meléndez">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://secundariajuchitan.edu.mx/">
+  <link rel="canonical" href="https://andrik2revuelta-dev.github.io/Secundaria_Juchitan/">
 
   <!-- Favicon Oficial -->
   <link rel="icon" type="image/png" href="Imagenes/logoEsc.png">
@@ -31,9 +31,9 @@
   <meta property="og:site_name" content="Secundaria General José Gregorio Meléndez">
   <meta property="og:title" content="Secundaria General José Gregorio Meléndez | Juchitán de Zaragoza">
   <meta property="og:description" content="Inscripciones abiertas en Juchitán: talleres técnicos, formación académica y pase directo sin examen de admisión. ¡Asegura el lugar de tu hijo hoy!">
-  <meta property="og:url" content="https://secundariajuchitan.edu.mx/">
+  <meta property="og:url" content="https://andrik2revuelta-dev.github.io/Secundaria_Juchitan/">
   <meta property="og:image" content="Imagenes/logoEsc.png">
-  <meta property="og:image:secure_url" content="https://secundariajuchitan.edu.mx/Imagenes/logoEsc.png">
+  <meta property="og:image:secure_url" content="https://andrik2revuelta-dev.github.io/Secundaria_Juchitan/Imagenes/logoEsc.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:alt" content="Escudo de la Secundaria General José Gregorio Meléndez en Juchitán de Zaragoza">
 
@@ -64,7 +64,7 @@
       "latitude": 16.435042,
       "longitude": -95.015310
     },
-    "url": "https://secundariajuchitan.edu.mx",
+    "url": "https://andrik2revuelta-dev.github.io/Secundaria_Juchitan/",
     "telephone": "+529716881348",
     "priceRange": "$0 (Educación Pública y Gratuita)"
   }
@@ -1041,6 +1041,86 @@
 
       </div>
 
+      <!-- Formulario de Contacto Funcional (Validación JS + Redirección WhatsApp) -->
+      <div class="footer-contact-form-wrapper" id="formulario-contacto">
+        <div class="form-header-centered">
+          <span class="form-header-tag">Atención Rápida y Personalizada</span>
+          <h3 class="form-title-centered">Envíanos un Mensaje Directo</h3>
+          <p class="form-sub-centered">
+            Completa el siguiente formulario para comunicarte de inmediato con nuestro equipo de Control Escolar vía WhatsApp.
+          </p>
+        </div>
+
+        <form id="contactForm" class="contact-form-grid" novalidate>
+          <div class="form-field-group">
+            <label for="tutorNombre" class="form-label">Nombre del tutor <span class="required-star">*</span></label>
+            <input 
+              type="text" 
+              id="tutorNombre" 
+              name="tutorNombre" 
+              class="form-input" 
+              placeholder="Ej. María Elena López" 
+              required
+              autocomplete="name"
+            >
+          </div>
+
+          <div class="form-field-group">
+            <label for="tutorTelefono" class="form-label">Teléfono de contacto <span class="required-star">*</span></label>
+            <input 
+              type="tel" 
+              id="tutorTelefono" 
+              name="tutorTelefono" 
+              class="form-input" 
+              placeholder="10 dígitos (ej. 9711234567)" 
+              required
+              autocomplete="tel"
+            >
+          </div>
+
+          <div class="form-field-group">
+            <label for="asuntoGrado" class="form-label">Asunto o grado de interés <span class="required-star">*</span></label>
+            <select id="asuntoGrado" name="asuntoGrado" class="form-select" required>
+              <option value="" disabled selected>Selecciona una opción...</option>
+              <option value="Inscripción 1° de Secundaria (Nuevo Ingreso)">Inscripción 1° de Secundaria (Nuevo Ingreso)</option>
+              <option value="Informes para 2° Grado">Informes para 2° Grado</option>
+              <option value="Informes para 3° Grado">Informes para 3° Grado</option>
+              <option value="Información de Talleres Técnicos">Información de Talleres Técnicos</option>
+              <option value="Trámites de Control Escolar">Trámites de Control Escolar</option>
+              <option value="Otro Asunto">Otro Asunto</option>
+            </select>
+          </div>
+
+          <div class="form-field-group full-width">
+            <label for="mensajeContacto" class="form-label">Mensaje o consulta <span class="required-star">*</span></label>
+            <textarea 
+              id="mensajeContacto" 
+              name="mensajeContacto" 
+              class="form-textarea" 
+              rows="3" 
+              placeholder="Escribe aquí tu duda, consulta o información que requieras..." 
+              required
+            ></textarea>
+          </div>
+
+          <!-- Mensaje de estado / confirmación en pantalla -->
+          <div id="contactFormStatus" class="form-status-alert full-width" role="status" aria-live="polite" style="display: none;"></div>
+
+          <div class="form-footer-action full-width">
+            <button type="submit" class="btn btn-form-submit" id="submitContactBtn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.11 7.44C8.94 7.44 8.68 7.5 8.46 7.74C8.24 7.97 7.62 8.56 7.62 9.76C7.62 10.96 8.5 12.12 8.62 12.28C8.74 12.45 10.33 14.9 12.77 15.96C13.35 16.21 13.8 16.36 14.15 16.47C14.73 16.66 15.26 16.63 15.68 16.57C16.15 16.5 17.12 15.98 17.32 15.41C17.52 14.84 17.52 14.36 17.46 14.26C17.4 14.16 17.25 14.1 17.03 13.99C16.81 13.88 15.72 13.34 15.52 13.27C15.31 13.19 15.16 13.16 15.01 13.38C14.86 13.6 14.43 14.1 14.3 14.25C14.17 14.41 14.04 14.43 13.82 14.32C13.6 14.21 12.89 13.97 12.05 13.22C11.39 12.63 10.95 11.91 10.82 11.69C10.7 11.47 10.81 11.35 10.92 11.24C11.02 11.14 11.14 10.98 11.25 10.85C11.36 10.72 11.4 10.63 11.47 10.48C11.54 10.33 11.5 10.2 11.45 10.09C11.39 9.98 10.95 8.91 10.77 8.47C10.59 8.04 10.41 8.1 10.27 8.09C10.14 8.08 9.99 8.08 9.84 8.08C9.69 8.08 9.45 8.14 9.25 8.35C9.05 8.56 8.5 9.08 8.5 10.18C8.5 11.28 9.3 12.33 9.42 12.49L9.11 7.44Z"/>
+              </svg>
+              <span>Enviar Mensaje por WhatsApp</span>
+            </button>
+            <p class="form-privacy-text">
+              Tus datos están protegidos conforme a la ley. Consulta nuestro 
+              <button type="button" class="btn-privacy-trigger" id="openPrivacyModalForm">Aviso de Privacidad</button>.
+            </p>
+          </div>
+        </form>
+      </div>
+
       <!-- Contenedor del Mapa Real de la Escuela (Mantenido) -->
       <div class="footer-map-section-centered">
         <h3 class="map-title-centered">Ubicación de Nuestras Instalaciones</h3>
@@ -1057,10 +1137,61 @@
     <div class="footer-legal-bar">
       <div class="container footer-legal-flex">
         <p>© 2026 Esc. Sec. Gral. José Gregorio Meléndez • Clave: 20DES0242A • Zona Escolar: 011</p>
-        <p class="zapotec-honor">Educación Pública, Laica y Gratuita • Hca. Cd. de Juchitán de Zaragoza, Oax.</p>
+        <div class="footer-legal-links">
+          <button type="button" class="btn-privacy-link" id="openPrivacyModalFooter">Aviso de Privacidad</button>
+          <span class="legal-separator">•</span>
+          <span class="zapotec-honor">Educación Pública, Laica y Gratuita • Hca. Cd. de Juchitán de Zaragoza, Oax.</span>
+        </div>
       </div>
     </div>
   </footer>
+
+  <!-- ===================================================================
+       VENTANA MODAL ACCESIBLE: AVISO DE PRIVACIDAD
+       - Conforme a los lineamientos de la LFPDPPP para centros educativos
+       - Navegable por teclado (cierre con tecla ESC y botón accesible)
+  ==================================================================== -->
+  <div id="privacyModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="privacyModalTitle" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-header-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <h3 id="privacyModalTitle" class="modal-title">Aviso de Privacidad Integral</h3>
+        <button type="button" class="modal-close-btn" id="closePrivacyModal" aria-label="Cerrar Aviso de Privacidad">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <p class="privacy-intro">
+          La <strong>Escuela Secundaria General José Gregorio Meléndez</strong> (Clave de Centro de Trabajo <strong>20DES0242A</strong>, Zona Escolar 011, Turno Matutino), con domicilio oficial en <em>Av. Hidalgo S/N Tercera Sección, Hca. Cd. de Juchitán de Zaragoza, Oaxaca, C.P. 70000</em>, es responsable del tratamiento, resguardo y protección de los datos personales proporcionados por los padres, madres, tutores legales y estudiantes.
+        </p>
+
+        <h4 class="privacy-subtitle">1. Finalidad del Tratamiento de Datos</h4>
+        <p>Los datos recabados en nuestros formularios de contacto, mensajes de WhatsApp o trámites presenciales (nombre del tutor, teléfono, grado escolar y mensajes) se utilizarán con los siguientes fines exclusivos:</p>
+        <ul class="privacy-list">
+          <li>Gestionar y dar seguimiento a solicitudes de preinscripción, entrega de fichas y requisitos de admisión.</li>
+          <li>Establecer comunicación directa y oportuna entre el personal de Control Escolar o Dirección y las familias.</li>
+          <li>Brindar orientación pedagógica sobre los talleres técnicos, actividades académicas y vida escolar.</li>
+        </ul>
+
+        <h4 class="privacy-subtitle">2. Confidencialidad y Transferencia</h4>
+        <p>
+          Sus datos personales están resguardados bajo estrictas medidas de seguridad administrativa y técnica. No serán vendidos, transferidos ni compartidos con personas, empresas o entidades ajenas a la institución, salvo requerimiento oficial expreso de las autoridades educativas (IEEPO/SEP) o judiciales competentes en ejercicio de sus funciones.
+        </p>
+
+        <h4 class="privacy-subtitle">3. Ejercicio de Derechos ARCO</h4>
+        <p>
+          Usted tiene derecho a ejercer en cualquier momento los derechos de Acceso, Rectificación, Cancelación y Oposición (Derechos ARCO) respecto a sus datos personales. Para hacerlo, puede acudir personalmente a las oficinas de Control Escolar de la institución en el horario matutino o comunicarse a nuestro teléfono de atención oficial: <a href="tel:9716881348" class="privacy-phone-link">971 688 1348</a>.
+        </p>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-form-submit modal-btn-close" id="acceptPrivacyModal">Entendido y Aceptar</button>
+      </div>
+    </div>
+  </div>
 
   <!-- ===================================================================
        BOTÓN FLOTANTE DE WHATSAPP (LLAMADO A LA ACCIÓN FIJO)
@@ -1082,9 +1213,10 @@
     <span class="whatsapp-float-tooltip">¿Dudas? ¡Escríbenos por WhatsApp!</span>
   </a>
 
-  <!-- Script interactivo ligero para el menú móvil y scroll fluido -->
+  <!-- Script interactivo ligero para el menú móvil, scroll, formulario y modal -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // 1. Menú Móvil (Hamburguesa)
       const navToggle = document.getElementById('navToggle');
       const navMenu = document.getElementById('navMenu');
 
@@ -1096,7 +1228,6 @@
           navMenu.classList.toggle('active');
         });
 
-        // Cerrar menú al hacer clic en cualquier enlace o botón interno
         const menuLinks = navMenu.querySelectorAll('a, button');
         menuLinks.forEach(link => {
           link.addEventListener('click', () => {
@@ -1105,7 +1236,6 @@
           });
         });
 
-        // Cerrar menú al hacer clic fuera del header
         document.addEventListener('click', (e) => {
           if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
             navMenu.classList.remove('active');
@@ -1114,6 +1244,7 @@
         });
       }
 
+      // 2. Cabecera dinámica con Scroll
       const header = document.getElementById('header');
       window.addEventListener('scroll', () => {
         if (window.scrollY > 20) {
@@ -1122,6 +1253,120 @@
           header.classList.remove('scrolled');
         }
       });
+
+      // 3. Control del Modal de Aviso de Privacidad
+      const privacyModal = document.getElementById('privacyModal');
+      const openModalBtn1 = document.getElementById('openPrivacyModalForm');
+      const openModalBtn2 = document.getElementById('openPrivacyModalFooter');
+      const closeModalBtn = document.getElementById('closePrivacyModal');
+      const acceptModalBtn = document.getElementById('acceptPrivacyModal');
+
+      function openPrivacyModal() {
+        if (!privacyModal) return;
+        privacyModal.classList.add('active');
+        privacyModal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+        closeModalBtn && closeModalBtn.focus();
+      }
+
+      function closePrivacyModal() {
+        if (!privacyModal) return;
+        privacyModal.classList.remove('active');
+        privacyModal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+      }
+
+      if (openModalBtn1) openModalBtn1.addEventListener('click', openPrivacyModal);
+      if (openModalBtn2) openModalBtn2.addEventListener('click', openPrivacyModal);
+      if (closeModalBtn) closeModalBtn.addEventListener('click', closePrivacyModal);
+      if (acceptModalBtn) acceptModalBtn.addEventListener('click', closePrivacyModal);
+
+      if (privacyModal) {
+        privacyModal.addEventListener('click', (e) => {
+          if (e.target === privacyModal) {
+            closePrivacyModal();
+          }
+        });
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && privacyModal && privacyModal.classList.contains('active')) {
+          closePrivacyModal();
+        }
+      });
+
+      // 4. Validación del Formulario de Contacto y Apertura de WhatsApp
+      const contactForm = document.getElementById('contactForm');
+      const formStatus = document.getElementById('contactFormStatus');
+
+      if (contactForm && formStatus) {
+        contactForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const nombreInput = document.getElementById('tutorNombre');
+          const telInput = document.getElementById('tutorTelefono');
+          const asuntoInput = document.getElementById('asuntoGrado');
+          const mensajeInput = document.getElementById('mensajeContacto');
+
+          const nombre = nombreInput ? nombreInput.value.trim() : '';
+          const telRaw = telInput ? telInput.value.trim() : '';
+          const asunto = asuntoInput ? asuntoInput.value.trim() : '';
+          const mensaje = mensajeInput ? mensajeInput.value.trim() : '';
+
+          const telClean = telRaw.replace(/\D/g, '');
+
+          // Validaciones amigables y accesibles
+          if (!nombre || nombre.length < 3) {
+            showStatus('Por favor, ingresa el nombre completo del tutor (mínimo 3 letras).', 'error');
+            nombreInput && nombreInput.focus();
+            return;
+          }
+
+          if (!telClean || telClean.length < 10) {
+            showStatus('Por favor, ingresa un número de teléfono válido a 10 dígitos (ej. 9711234567).', 'error');
+            telInput && telInput.focus();
+            return;
+          }
+
+          if (!asunto) {
+            showStatus('Por favor, selecciona el asunto o grado escolar de tu interés.', 'error');
+            asuntoInput && asuntoInput.focus();
+            return;
+          }
+
+          if (!mensaje || mensaje.length < 5) {
+            showStatus('Por favor, escribe un mensaje o duda más detallada (mínimo 5 caracteres).', 'error');
+            mensajeInput && mensajeInput.focus();
+            return;
+          }
+
+          // Mensaje de éxito en pantalla
+          showStatus('✅ ¡Datos validados con éxito! Abriendo WhatsApp con los datos redactados...', 'success');
+
+          // Mensaje redactado con formato para WhatsApp
+          const waMessage = 
+            `*Solicitud de Informes - Secundaria General José Gregorio Meléndez*\n` +
+            `-----------------------------------\n` +
+            `*Nombre del tutor:* ${nombre}\n` +
+            `*Teléfono:* ${telClean}\n` +
+            `*Asunto / Grado:* ${asunto}\n` +
+            `*Mensaje:* ${mensaje}`;
+
+          const waUrl = `https://wa.me/529716881348?text=${encodeURIComponent(waMessage)}`;
+
+          setTimeout(() => {
+            window.open(waUrl, '_blank', 'noopener,noreferrer');
+            contactForm.reset();
+          }, 800);
+        });
+
+        function showStatus(msg, type) {
+          formStatus.textContent = msg;
+          formStatus.className = `form-status-alert full-width status-${type}`;
+          formStatus.style.display = 'block';
+          formStatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
     });
   </script>
 </body>
